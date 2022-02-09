@@ -21,13 +21,16 @@ public class CompanyTest
 	@Before
 	public void setUp() throws Exception
 	{
-		j = new Employee("John", 5, 35);
+		j = new Employee("John", 5);
+		j.setHours(35);
 		j.setPayroll(s);
-		b = new Employee("Bob", 12, 59, c);
-		company = new Company();
 		
+		b = new Employee("Bob", 12, c);
+		b.setHours(59);
+		
+		company = new Company();
 		company.addEmployee(j);
-		company.addEmployee("Ashley", 10, 45, h);
+		company.addEmployee("Ashley", 10, 45, h); //Name, rate, hours, and payroll
 		company.addEmployee(b);
 	}
 
@@ -35,8 +38,9 @@ public class CompanyTest
 	public void test()
 	{
 		double [] payments = new double[] {200, 475, 708};
-		System.out.println(payments);
+		
 		assertTrue(Arrays.equals(payments, company.payEmployees()));
+		
 	}
 
 }

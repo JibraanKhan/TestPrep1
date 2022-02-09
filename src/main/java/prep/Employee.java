@@ -26,6 +26,18 @@ public class Employee
 		this.payroll = payroll;
 	}
 	
+	public Employee(String name, double rate, Payroll payroll)
+	{
+		this.name = name;
+		this.rate = rate;
+		this.payroll = payroll;
+	}
+	
+	public Employee(String name, double rate)
+	{
+		this.name = name;
+		this.rate = rate;
+	}
 	/**
 	 * @return  the name of specific employee
 	 */
